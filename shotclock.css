@@ -1,0 +1,101 @@
+body {
+    background-color: black;
+    color: #f12f12;
+    margin: 0;
+    font-family: 'Profession', sans-serif;
+    user-select: none;
+}
+button {
+    width: 10vw;
+    height: 10vh;
+    background-color: black;
+    color: #f12f12;
+    border: 1px solid #f12f12;
+    border-radius: 25px;
+    font-size: 5vh;
+    text-align: center;
+}
+input {
+    width: 30vw;
+    height: 10vh;
+    background-color: black;
+    color: #f12f12;
+    border: 1px solid #f12f12;
+    border-radius: 25px;
+    font-size: 10vh;
+    text-align: center;
+}
+table {
+    width: 100%;
+    height: 100%;
+}
+td {
+    text-align: center;
+    vertical-align: center;
+    font-size: 5vh;
+}
+ul li {
+    list-style-position: inside;
+}
+
+tr.player-score {
+    height: 50%;
+}
+td.player-score {
+    font-size: 30vh;
+    font-family: 'Seven segment', sans-serif;
+}
+td.player-extension {
+    background-color: #00f120;
+    border-radius: 25px;
+}
+td.player-extension.inactive {
+    background-color: #f12f12;
+    color: grey;
+}
+
+td.display {
+    width: 60%;
+}
+tr.display-time {
+    height: 80%;
+}
+#display-time {
+    font-size: 50vh;
+    font-family: 'Seven segment', sans-serif;
+}
+#display-bar {
+    border-radius: 25px;
+    background: linear-gradient(90deg, rgba(0,0,0,1) -200%, rgba(255,0,0,1) -200%, rgba(0,241,32,1) 100%);
+}
+
+.controls {
+    height: 20%;
+}
+.controls td {
+    padding: 2vh;
+    font-size: 20vh;
+}
+
+.invisible {
+    display: none !important;
+}
+.settings-inputs td {
+    width: 50%;
+}
+#welcome-confirm img {
+    height: 30vh;
+}
+
+.player-name td {
+    border: 1vh solid transparent;
+}
+.player-name.active td{
+    border: 1vh solid #f12f12;
+    border-radius: 25px;
+}
+.display-break.active{
+    background-image: url("12ball.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
