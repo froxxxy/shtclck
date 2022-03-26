@@ -123,8 +123,8 @@ function setTimer(element) {
         toggleTimer();
     }
     var newTimer = prompt('Enter current time:', element.innerText);
-    element.innerText = newTimer ? newTimer : element.innerText;
     timer = newTimer ? Number.parseInt(newTimer) : timer;
+    updateDisplay();
 }
 
 element = document.querySelector('.display-timer');
