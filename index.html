@@ -42,7 +42,7 @@
                     <td class="display-break" id="display-break-player2">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="display-timer" colspan="3">30</td>
+                    <td class="display-timer" colspan="3">60</td>
                 </tr>
                 <tr>
                     <td class="display-bar" colspan="3">&nbsp;</td>
@@ -108,6 +108,12 @@
             <button id="settings-fullscreen"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></button>
         </td>
     </tr>
+    <tr>
+        <td><label for="settings-about">About</label></td>
+        <td>
+            <button id="settings-about"><i class="fa-solid fa-info"></i></button>
+        </td>
+    </tr>
     </tbody>
 
     <tfoot>
@@ -133,8 +139,7 @@
         <td class="welcome-text">
             <h4>Todo:</h4>
             <p>
-                Play pool. Have fun. Keep an eye on the clock.<br>
-                <img id="welcome-confirm" src="12ball.png">
+                Play pool. Have fun. Keep an eye on the clock.
             </p>
         </td>
     </tr>
@@ -147,6 +152,36 @@
     </tfoot>
 
 </table>
+
+<table class="modal invisible" id="about">
+
+    <thead>
+    <tr>
+        <th colspan="2">about</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td class="about-text">
+            <h4>shtclck by froxxxy</h4>
+            <p>
+                for more info / issues / suggestions / ...<br>
+                visit the<br>
+                <a href="https://github.com/froxxxy/shtclck"><i class="fa-brands fa-github"></i> project</a>
+            </p>
+        </td>
+    </tr>
+    </tbody>
+
+    <tfoot>
+    <tr class="controls">
+        <td id="about-cancel"><i class="fa-solid fa-play"></i></td>
+    </tr>
+    </tfoot>
+
+</table>
+<img id="logo" src="12ball.png">
 <script src="shtclck.js" type="text/javascript"></script>
 </body>
 </html>

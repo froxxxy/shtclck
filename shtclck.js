@@ -32,7 +32,6 @@ if (document.cookie.length) {
     alternateBreak = cookies.alternateBreak ? (cookies.alternateBreak == 'true') : alternateBreak;
 }
 
-document.getElementById('welcome-confirm').addEventListener('click', toggleWelcome);
 document.getElementById('welcome-play').addEventListener('click', toggleWelcome);
 
 // Player
@@ -211,6 +210,13 @@ function setFullscreen() {
 }
 
 document.getElementById('settings-fullscreen').addEventListener('click', setFullscreen);
+
+function toggleAbout() {
+    document.getElementById('about').classList.toggle('invisible');
+    document.getElementById('settings').classList.toggle('invisible');
+}
+document.getElementById('settings-about').addEventListener('click', toggleAbout);
+document.getElementById('about-cancel').addEventListener('click', toggleAbout);
 
 document.getElementById('settings-cancel').addEventListener('click', toggleSettings);
 

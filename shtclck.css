@@ -1,4 +1,8 @@
 /* generics */
+a, a:visited {
+    color: #f12f12;
+    font-size: 15vh;
+}
 body {
     background-color: black;
     color: #f12f12;
@@ -101,9 +105,17 @@ td {
     margin: 5vh;
 }
 
-
 .settings-inputs td {
     width: 50%;
+}
+
+#logo {
+    position: fixed;
+    z-index: -1;
+    bottom: -29vh;
+    right: -5vw;
+    height: 120vh;
+    opacity: 0.3;
 }
 
 /* helpers */
