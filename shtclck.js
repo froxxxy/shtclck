@@ -36,18 +36,23 @@ if (document.cookie.length) {
 document.getElementById('welcome-play').addEventListener('click', toggleWelcome);
 
 // Player
-function setPlayername() {
-    var name = prompt('Enter name:', this.innerText);
-    if (name) {
-        this.innerText = name;
-    }
-    player1 = document.querySelector('#player1 .player-name').innerText;
-    document.cookie = "player1=" + player1;
-    player2 = document.querySelector('#player2 .player-name').innerText;
-    document.cookie = "player2=" + player2;
+function setPlayer1Name(name) {
+    document.querySelector('#player1 .player-name').innerText = name;
+    document.cookie = "player1=" + name;
 }
 
-document.querySelectorAll('.player-name').forEach(element => element.addEventListener('click', setPlayername));
+document.querySelector('#player1 .player-name').addEventListener('click', function () {
+    showPrompt('text', 'Enter name of Player 1:', this.innerText, 'setPlayer1Name');
+});
+
+function setPlayer2Name(name) {
+    document.querySelector('#player2 .player-name').innerText = name;
+    document.cookie = "player2=" + name;
+}
+
+document.querySelector('#player2 .player-name').addEventListener('click', function () {
+    showPrompt('text', 'Enter name of Player 2:', this.innerText, 'setPlayer2Name');
+});
 
 function toggleActivePlayer() {
     document.querySelector('#player' + activePlayer + ' .player-name').classList.remove('active');
@@ -81,13 +86,22 @@ function increasePlayerScore() {
 
 document.querySelectorAll('td.player-score').forEach(element => element.addEventListener('click', increasePlayerScore));
 
-function setPlayerScore(element) {
-    var score = prompt('Enter current score:', element.innerText)
-    element.innerText = score ? score : element.innerText;
+function setPlayer1Score(score) {
+    document.querySelector('#player1 .player-score').innerText = score ? score : 0;
 }
 
-document.querySelectorAll('.player-score').forEach(function (element) {
-    onLongPress(element, () => setPlayerScore(element));
+element = document.querySelector('#player1 .player-score');
+onLongPress(element, () => {
+    showPrompt('number', 'Enter score for player 1:', document.querySelector('#player1 .player-score').innerText, 'setPlayer1Score');
+});
+
+function setPlayer2Score(score) {
+    document.querySelector('#player2 .player-score').innerText = score ? score : 0;
+}
+
+element = document.querySelector('#player2 .player-score');
+onLongPress(element, () => {
+    showPrompt('number', 'Enter score for player 2:', document.querySelector('#player2 .player-score').innerText, 'setPlayer2Score');
 });
 
 function playerExtension() {
@@ -118,17 +132,16 @@ function resetTimer() {
 
 document.querySelector('.display-timer').addEventListener('click', resetTimer);
 
-function setTimer(element) {
+function setTimer(newTimer) {
     if (interval) {
         toggleTimer();
     }
-    var newTimer = prompt('Enter current time:', element.innerText);
     timer = newTimer ? Number.parseInt(newTimer) : timer;
     updateDisplay();
 }
 
 element = document.querySelector('.display-timer');
-onLongPress(element, () => setTimer(element));
+onLongPress(element, () => showPrompt('number', 'Enter time:', timer, 'setTimer'));
 
 // Controls
 function toggleTimer() {
@@ -216,6 +229,7 @@ function toggleAbout() {
     document.getElementById('about').classList.toggle('invisible');
     document.getElementById('settings').classList.toggle('invisible');
 }
+
 document.getElementById('settings-about').addEventListener('click', toggleAbout);
 document.getElementById('about-cancel').addEventListener('click', toggleAbout);
 
@@ -265,6 +279,27 @@ function runTimer() {
         beep(100, 606);
     }
 }
+
+function showPrompt(type, label, value, callback) {
+    document.getElementById('prompt').classList.remove('invisible');
+    document.getElementById('prompt').classList.remove('active');
+    document.querySelectorAll('.prompt-input').forEach(element => element.classList.add('invisible'));
+    document.querySelectorAll('.prompt-input.prompt-' + type).forEach(function(element) {
+        element.classList.remove('invisible');
+        element.classList.add('active');
+    });
+    document.querySelector('.prompt-input.prompt-' + type + ' label').innerText = label;
+    document.querySelector('.prompt-input.prompt-' + type + ' input').value = value;
+    document.querySelector('#prompt-save').dataset.callback = callback;
+}
+
+document.getElementById('prompt-cancel').addEventListener('click', () => document.getElementById('prompt').classList.add('invisible'));
+
+function savePrompt() {
+    window[this.dataset.callback](document.querySelector('.prompt-input.active input').value);
+    document.getElementById('prompt').classList.add('invisible');
+}
+document.getElementById('prompt-save').addEventListener('click', savePrompt);
 
 // Helpers
 function onLongPress(element, callback) {
