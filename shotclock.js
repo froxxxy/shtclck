@@ -239,6 +239,7 @@ function updateDisplay() {
     document.querySelector('.display-timer').innerText = timer;
     document.querySelector('.display-bar').style.background = "linear-gradient(90deg, rgba(0,0,0,1) -200%, rgba(255,0,0,1) " + (Math.ceil(100 - (timer / resetTime) * 300)) + "%, rgba(0,241,32,1) 100%)";
 }
+
 function runTimer() {
     if (timer < 0) {
         toggleTimer();
