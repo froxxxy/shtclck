@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<table class="main invisible" id="main">
+<table class="invisible" id="main">
 
     <thead>
     <tr>
@@ -21,44 +21,44 @@
 
     <tbody>
     <tr>
-        <td class="player">
-            <table class="player">
-                <tr class="player-name active">
-                    <td id="player1-name">Player 1</td>
-                </tr>
-                <tr class="player-score">
-                    <td class="player-score" id="player-score-1">0</td>
+        <td class="player" id="player1">
+            <table>
+                <tr>
+                    <td class="player-name active">Player 1</td>
                 </tr>
                 <tr>
-                    <td class="player-extension">Extension</td>
+                    <td class="player-score" data-player="1">0</td>
+                </tr>
+                <tr>
+                    <td class="player-extension active">Extension</td>
                 </tr>
             </table>
         </td>
         <td class="display">
-            <table class="display">
-                <tr class="display-race">
-                    <td class="display-break active" id="display-break1">&nbsp;</td>
-                    <td>Race to <span id="display-race">9</span></td>
-                    <td class="display-break" id="display-break2">&nbsp;</td>
+            <table>
+                <tr>
+                    <td class="display-break active" id="display-break-player1">&nbsp;</td>
+                    <td>Race to <span class="display-race">9</span></td>
+                    <td class="display-break" id="display-break-player2">&nbsp;</td>
                 </tr>
-                <tr class="display-time">
-                    <td colspan="3" id="display-time">30</td>
+                <tr>
+                    <td class="display-timer" colspan="3">30</td>
                 </tr>
-                <tr class="display-bar">
-                    <td colspan="3" id="display-bar">&nbsp;</td>
+                <tr>
+                    <td class="display-bar" colspan="3">&nbsp;</td>
                 </tr>
             </table>
         </td>
-        <td class="player">
-            <table class="player">
-                <tr class="player-name">
-                    <td id="player2-name">Player 2</td>
-                </tr>
-                <tr class="player-score">
-                    <td class="player-score" id="player-score-2">0</td>
+        <td class="player" id="player2">
+            <table>
+                <tr>
+                    <td class="player-name">Player 2</td>
                 </tr>
                 <tr>
-                    <td class="player-extension">Extension</td>
+                    <td class="player-score" data-player="2">0</td>
+                </tr>
+                <tr>
+                    <td class="player-extension active">Extension</td>
                 </tr>
             </table>
         </td>
@@ -84,25 +84,29 @@
     </thead>
 
     <tbody>
-    <tr class="settings-inputs">
+    <tr>
         <td><label for="settings-time">Time</label></td>
         <td><input id="settings-time" type="number"></td>
     </tr>
-    <tr class="settings-inputs">
+    <tr>
         <td><label for="settings-race">Race to</label></td>
         <td><input id="settings-race" type="number"></td>
     </tr>
-    <tr class="settings-inputs">
+    <tr>
         <td><label for="settings-alternate">Alternate break</label></td>
         <td><input id="settings-alternate" type="checkbox"></td>
     </tr>
-    <tr class="settings-inputs">
-        <td><label for="settings-reset">Reset</label></td>
-        <td><button id="settings-reset"><i class="fa-solid fa-clock-rotate-left"></i></button></td>
+    <tr>
+        <td><label for="settings-reset">Reset Game</label></td>
+        <td>
+            <button id="settings-reset"><i class="fa-solid fa-clock-rotate-left"></i></button>
+        </td>
     </tr>
-    <tr class="settings-fullscreen">
+    <tr>
         <td><label for="settings-fullscreen">Recover Fullscreen</label></td>
-        <td><button id="settings-fullscreen"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></button></td>
+        <td>
+            <button id="settings-fullscreen"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></button>
+        </td>
     </tr>
     </tbody>
 
@@ -125,23 +129,20 @@
     </thead>
 
     <tbody>
-    <tr class="welcome-text">
-        <td>
-            <h4>Todo:</h4>
-            <ul>
-                <li>Play pool.</li>
-                <li>Have fun.</li>
-            </ul>
-        </td>
-    </tr>
     <tr>
-        <td id="welcome-confirm"><img src="12ball.png"></td>
+        <td class="welcome-text">
+            <h4>Todo:</h4>
+            <p>
+                Play pool. Have fun. Keep an eye on the clock.<br>
+                <img id="welcome-confirm" src="12ball.png">
+            </p>
+        </td>
     </tr>
     </tbody>
 
     <tfoot>
     <tr class="controls">
-        <td>&nbsp;</td>
+        <td id="welcome-play"><i class="fa-solid fa-play"></i></td>
     </tr>
     </tfoot>
 
