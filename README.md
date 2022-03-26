@@ -45,3 +45,4 @@ Get started at https://shtclck.org
   - https://stackoverflow.com/questions/6139225/how-to-detect-a-long-touch-pressure-with-javascript-for-android-and-iphone
   - https://stackoverflow.com/questions/879152/how-do-i-make-javascript-beep
   - and many more open tabs :)
+- RealFaviconGenerator for (you guessed it!) favicons (https://realfavicongenerator.net/)
