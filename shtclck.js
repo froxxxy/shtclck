@@ -8,6 +8,7 @@ let player2 = 'Player 2';
 let activePlayer = 1;
 let breakedPlayer = 1;
 let element;
+let audioCtx;
 
 document.body.oncontextmenu = function () {
     return false;
