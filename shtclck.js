@@ -21,7 +21,7 @@ if (document.cookie.length) {
         prev[name] = value.join('=');
         return prev;
     }, {});
-    resetTime = cookies.resetTime ?? resetTime;
+    resetTime = Number.parseInt(cookies.resetTime) ?? resetTime;
     timer = resetTime * 2;
     updateDisplay();
     race = cookies.race ?? race;
